@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.mikhailchizh.vandroukiapp"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def DB_FLOW_VERSION = "4.0.0-beta3"
+def RETROFIT_VERSION = "2.3.0"
+def BUTTER_KNIFE_VERSION = "8.8.1"
+def RX_ANDROID_VERSION = "2.0.1"
+def RX_BINDING_VERSION = "2.0.0"
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
+    compile "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}"
+    compile "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}"
+
+
+    compile "com.jakewharton:butterknife:${BUTTER_KNIFE_VERSION}"
+    annotationProcessor "com.jakewharton:butterknife:${BUTTER_KNIFE_VERSION}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTER_KNIFE_VERSION}"
+
+
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${DB_FLOW_VERSION}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${DB_FLOW_VERSION}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${DB_FLOW_VERSION}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:${DB_FLOW_VERSION}"
+
+
+    compile "io.reactivex.rxjava2:rxjava:${RX_ANDROID_VERSION}"
+    compile "io.reactivex.rxjava2:rxandroid:${RX_ANDROID_VERSION}"
+    compile "com.jakewharton.rxbinding2:rxbinding:${RX_BINDING_VERSION}"
+    compile 'com.android.support:multidex:1.0.2'
+    compile 'com.facebook.stetho:stetho:1.5.0'
+}

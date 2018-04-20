@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vandrouki app</string>
+
+
+    <string name="main">Главная</string>
+    <string name="fly_from">Летим из...</string>
+    <string name="fly_to">Летим в...</string>
+    <string name="buses">Автобусы</string>
+
+    <string name="settings">Настройки</string>
+    <string name="about_program">О программе</string>
+
+</resources>
